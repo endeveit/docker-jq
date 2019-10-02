@@ -15,6 +15,14 @@ $ docker run --rm --name jq endeveit/docker-jq \
 }
 ```
 
+Test a complex command:
+
+```bash
+$ docker run --rm --name jq endeveit/docker-jq \
+  sh -c 'echo "{\"foo\":\"bar\"}" | jq ". | .foo as \$var | \$var"'
+"bar"
+```
+
 Start an interactive container with jq:
 
 ```
